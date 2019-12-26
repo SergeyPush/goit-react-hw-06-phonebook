@@ -8,7 +8,7 @@ const ContactsList = ({ contacts, deleteContact }) => {
     <Segment basic>
       <List
         relaxed
-        verticalAlign="middle"
+        // verticalAlign="middle"
         size="big"
         style={{ width: '350px' }}
       >

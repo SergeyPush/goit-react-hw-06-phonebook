@@ -5,18 +5,18 @@ import { List, Button } from 'semantic-ui-react';
 const ContactItem = ({ contact, deleteContact }) => {
   return (
     <List.Item>
+      <List.Content floated="right">
+        <Button
+          size="tiny"
+          color="red"
+          onClick={() => deleteContact(contact.id)}
+        >
+          Delete
+        </Button>
+      </List.Content>
       <List.Icon name="user outline" />
       <List.Content>
         {contact.name} - {contact.phone}
-        <List.Content floated="right">
-          <Button
-            size="tiny"
-            color="red"
-            onClick={() => deleteContact(contact.id)}
-          >
-            Delete
-          </Button>
-        </List.Content>
       </List.Content>
     </List.Item>
   );
