@@ -13,8 +13,13 @@ function App() {
   useEffect(() => {
     try {
       const value = localStorage.getItem('contacts');
+      if (!value) {
+        return;
+      }
       setContacts(JSON.parse(value));
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   useEffect(() => {
@@ -29,7 +34,6 @@ function App() {
       alert(`${contact.name} is already in contacts`);
       return;
     }
-
     setContacts(prev => [contact, ...prev]);
   };
   const deleteContact = id => {

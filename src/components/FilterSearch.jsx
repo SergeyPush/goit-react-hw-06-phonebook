@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input } from 'semantic-ui-react';
-import { Header, Segment } from 'semantic-ui-react';
+import T from 'prop-types';
+import { Input, Header, Segment } from 'semantic-ui-react';
 const FilterSearch = ({ filter, setFilter }) => {
   return (
     <Segment basic>
@@ -15,6 +15,11 @@ const FilterSearch = ({ filter, setFilter }) => {
       />
     </Segment>
   );
+};
+
+FilterSearch.propTypes = {
+  filter: T.string.isRequired,
+  setFilter: T.func.isRequired,
 };
 
 export default FilterSearch;

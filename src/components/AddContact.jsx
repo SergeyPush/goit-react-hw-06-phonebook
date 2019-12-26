@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import shortid from 'shortid';
+import T from 'prop-types';
 import { Input, Button, Header, Segment } from 'semantic-ui-react';
 
 const AddContact = ({ addContact }) => {
@@ -45,6 +46,10 @@ const AddContact = ({ addContact }) => {
       </form>
     </Segment>
   );
+};
+
+AddContact.propTypes = {
+  addContact: T.func.isRequired,
 };
 
 export default AddContact;
